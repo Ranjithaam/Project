@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            background-image: url("pondi.webp");
+            background-repeat: no-repeat;
+            background-size: 1500px 1000px;
+        }
+        .form{
+            width:750px;
+            height:700px;
+            text-align: center;
+            padding-top: 20px;
+            margin: auto;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .form .input_field{
+            color:black;
+        } 
+    </style>
+</head>
+<body>
+    <div class="content">
+    <h1 style="text-align: center;">BOOK YOUR TRIP</h1>
+    <div>
+    <form name="form" class="form" onsubmit="return validate()">  
+        <div class="input_field">
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter your name"><span style="font-size: 12px; padding-left:10px;color: red;" id="name1"></span><br><br>
+        </div>
+        <div id="gender" class="input_field">
+        <label>Gender:</label>
+        <input type="radio" id="gender" name="Gender" value="MALE">MALE
+        <input type="radio" id="gender" name="Gender" value="FEMALE">FEMALE<span style="font-size: 12px; padding-left:10px;color: red;" id="gen"></span><br><br></div>
+        <div class="input_field">
+        <label>E-mail:</label>
+        <input type="email" id="email" name="email"><span style="font-size: 12px; padding-left:10px; color: red;" id="mail"></span><br><br></div>
+        <div class="input_field">
+        <label>Phone:</label>
+        <input type="tel" id="phone" name="phone"><span style="font-size: 12px; padding-left:10px; color: red;" id="ph"></span><br><br></div>
+        <div class="input_field">
+       <label>Address:</label>
+        <input type="text" id="address" name="address"><br><br></div>
+        <div class="input_field">
+        <label>Select the Place </label>
+        <select id="select">
+            <option>HAMPI</option>
+            <option>MYSURU</option>
+            <option>MUNNAR</option>
+            <option>PANDICHERRY</option>
+            <option>AGRA</option>
+            <option>DELHI</option>
+            </select><br><br></div>
+            <div class="input_field">
+        <label>Start date</label>
+        <input type="date" id="date" name="date"><span style="font-size: 12px; padding-left:10px;color: red;" id="dt"></span><br><br></div>
+        <div class="input_field">
+        <label>End date</label>
+        <input type="date" id="date1" name="date"><span style="font-size: 12px; padding-left:10px;color: red;" id="dt1"></span></span><br><br></div>
+        <div class="input_field">
+        <label>Number of days</label>
+        <input type="number" id="date" placeholder="Enter a total number of days"><br><br></div>
+        <div class="input_field">
+            <label>Password</label>
+            <input type="text" id="password" name="password"><span style="font-size: 12px; padding-left:10px;color: red;" id="pass"></span><br><br></div>
+            <div class="input_field">
+                <label>Confirm Password</label>
+                <input type="text" id="cpassword" name="cpassword"><span style="font-size: 12px; padding-left:10px;color: red;"id="cpass"></span><br><br></div>
+        <div class="input_field">
+        <button type="submit" value="submit">SUBMIT</button>
+      </form> 
+    </div>
+    <script>
+        function validate(){
+        var name=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var phone=document.getElementById("phone").value
+       var select=document.getElementById("select").value
+       var date=document.getElementById("date").value
+        var password=document.getElementById("password").value
+        //var phone=document.getElementById("phone").value
+        if(name==""){
+            document.getElementById("name1").innerHTML="Name should not be Empty";
+            return false;
+        }
+        else{
+            document.getElementById("name1").innerHTML="";
+        }
+        if(email==""){
+            document.getElementById("mail").innerHTML="Email should not be Empty";
+            return false;
+        }
+        if(email.indexOf('@')<=0){
+            document.getElementById("mail").innerHTML="";
+        }
+        if(phone==""){
+            document.getElementById("ph").innerHTML="should not be empty";
+            return false;
+        }
+        if(isNaN(phone)){
+            document.getElementById("ph").innerHTML="write only digits not a character";
+            return false;
+        }
+        if(phone.length!=10){
+            document.getElementById("ph").innerHTML="must write 10 digits";
+            return false;
+        }
+        if(date==""){
+            document.getElementById("dt").innerHTML="Enter a date";
+            return false;
+        }
+        if(password==""){
+            document.getElementById("pass").innerHTML="Password Cannot be Empty";
+            return false;
+        }
+
+        if(password!=cpassword){
+            document.getElementById("cpass").innerHTML="Password is not matching Re-Enter your password";
+            return false;
+        }   
+    }
+        </script>
+</body>
+</html>
