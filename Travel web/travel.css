@@ -14,7 +14,7 @@
 }
 .navbar ul li{
     margin: 0 5px;
-    text-transform: uppercase;
+    
 }
 .navbar ul li a{
     text-decoration: none;
@@ -83,11 +83,11 @@
     display: none;
 }
 
-@media (max-width:952px){
+/* @media (max-width:952px){
     .image{
         height:50px;
         width:50px
-        padding-left: 50px;
+        padding-left:50px;
     }
     .navbar ul li a{
         font-size: 25px;
@@ -105,5 +105,5 @@
             font-size: 20px;
             display: none;
         }
-    }
+    } */
 
